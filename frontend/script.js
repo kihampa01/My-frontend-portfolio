@@ -250,12 +250,18 @@ function initAdminControls() {
   const addBtn = document.getElementById('project-add');
   const logoutBtn = document.getElementById('admin-logout');
 
-  // ACCEPT ANY PASSWORD: enable admin when user clicks Unlock, regardless of input
-  loginBtn && loginBtn.addEventListener('click', async () => {
-    isAdmin = true;
-    if (msg) msg.style.display = 'none';
-    if (loginPanel) loginPanel.style.display = 'none';
-    if (adminArea) adminArea.style.display = 'block';
+  loginBtn && loginBtn.addEventListener('click', () => {
+    const pwd = pwdInput.value.trim();
+
+    if (pwd.length > 0) {
+      isAdmin = true;
+      msg.style.display = 'none';
+      loginPanel.style.display = 'none';
+      adminArea.style.display = 'block';
+    } else {
+      msg.textContent = 'Enter any password to unlock';
+      msg.style.display = 'block';
+    }
   });
 
   const photoUpload = document.getElementById('profile-photo-upload');
@@ -264,6 +270,7 @@ function initAdminControls() {
     if (!file) {
       return;
     }
+
     try {
       const resized = await resizeImageFile(file, 220);
       currentProfile.photo = resized;
@@ -278,12 +285,20 @@ function initAdminControls() {
   addBtn && addBtn.addEventListener('click', () => {
     const title = document.getElementById('project-title').value.trim();
     const desc = document.getElementById('project-description').value.trim();
-    const tech = document.getElementById('project-tech').value.split(',').map(t => t.trim()).filter(Boolean);
-    if (!title) return alert('Enter a project title');
+    const tech = document.getElementById('project-tech').value
+      .split(',')
+      .map((t) => t.trim())
+      .filter(Boolean);
+
+    if (!title) {
+      return alert('Enter a project title');
+    }
+
     const project = { title, description: desc, technologies: tech };
     currentProfile.projects.unshift(project);
     saveLocalProjects(currentProfile.projects);
     renderProjects(currentProfile.projects);
+
     document.getElementById('project-title').value = '';
     document.getElementById('project-description').value = '';
     document.getElementById('project-tech').value = '';
