@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mkiva David - Data Scientist, Analyst, and Software Developer based in Dar es Salaam, Tanzania."
+    />
+    <title>Mkiva David | Data Scientist</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Go to homepage">
+        <span class="brand-mark">M</span>
+        <span>Mkiva David</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#profile">Profile</a>
+        <a href="#skills">Skills</a>
+        <a href="#qualifications">Qualifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#admin">Admin</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="intro" id="profile">
+        <div class="intro-copy">
+          <p class="eyebrow">Personal Portfolio</p>
+          <h1 id="profile-name">Mkiva David</h1>
+          <p class="role" id="profile-role">Data Scientist, Analyst, Software Developer</p>
+          <p class="bio" id="profile-bio">
+            I build data-driven solutions and software tools that transform business requirements into high-impact insights.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="#admin">Admin Portal</a>
+          </div>
+        </div>
+
+        <aside class="profile-panel" aria-label="Profile highlights">
+          <div class="portrait" aria-hidden="true">
+            <span id="profile-initials">MK</span>
+            <img id="profile-badge" class="portrait-badge" src="" alt="Profile photo" style="display:none" />
+          </div>
+          <dl class="quick-facts">
+            <div>
+              <dt>Location</dt>
+              <dd id="profile-location">Dar es Salaam, Tanzania</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd id="profile-focus">Data Science, Analytics, Software Development</dd>
+            </div>
+            <div>
+              <dt>API Status</dt>
+              <dd id="api-status">Checking...</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-heading">
+          <p class="eyebrow">Skills</p>
+          <h2>Technical Skills</h2>
+        </div>
+        <div class="tag-list" id="skills-list"></div>
+      </section>
+
+      <section class="section split" id="qualifications">
+        <div class="section-heading">
+          <p class="eyebrow">Qualifications</p>
+          <h2>Education And Certifications</h2>
+        </div>
+        <div class="timeline" id="qualifications-list"></div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>Selected Work</h2>
+        </div>
+        <div class="project-grid" id="projects-list"></div>
+      </section>
+
+      <section class="section" id="admin">
+        <div class="section-heading">
+          <p class="eyebrow">Admin</p>
+          <h2>Admin Portal</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Project Admin Portal</h3>
+            <p>
+              This portal is password-protected. Enter your admin password to unlock project management features.
+            </p>
+            <div id="admin-login" class="admin-panel">
+              <label for="admin-password">Password</label>
+              <input id="admin-password" type="password" placeholder="Enter admin password" />
+              <div style="margin-top:12px">
+                <button id="admin-login-button" class="button">Unlock</button>
+              </div>
+              <p id="admin-message" style="color:var(--coral);margin-top:10px;display:none"></p>
+            </div>
+            <div id="admin-area" class="admin-area" style="display:none;margin-top:18px">
+              <h4>Add Project</h4>
+              <input id="project-title" placeholder="Project title" />
+              <textarea id="project-description" placeholder="Short description" rows="3"></textarea>
+              <input id="project-tech" placeholder="Technologies (comma separated)" />
+              <div style="margin-top:16px">
+                <label for="profile-photo-upload">Upload profile photo</label>
+                <input id="profile-photo-upload" type="file" accept="image/*" />
+              </div>
+              <div style="margin-top:10px">
+                <button id="project-add" class="button primary">Add Project</button>
+                <button id="admin-logout" class="button secondary">Logout</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Contact Information</h2>
+        </div>
+        <div class="contact-grid">
+          <a id="contact-email" class="contact-link" href="mailto:mkivakihampa05@gmail.com">
+            <span>Email</span>
+            <strong>mkivakihampa05@gmail.com</strong>
+          </a>
+          <a id="contact-phone" class="contact-link" href="tel:+255763832814">
+            <span>Phone</span>
+            <strong>+255 76 383 2814</strong>
+          </a>
+          <a id="contact-github" class="contact-link" href="https://github.com/kihampa01" target="_blank" rel="noreferrer">
+            <span>GitHub</span>
+            <strong>github.com/kihampa01</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built for a data science and software development portfolio.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="./config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
