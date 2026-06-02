@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio frontend for Vercel deployment.",
+  "scripts": {
+    "start": "node frontend/local-server.js",
+    "dev": "node frontend/local-server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
