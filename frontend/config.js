@@ -4,7 +4,6 @@ const apiBaseUrl = typeof window !== 'undefined' ?
     ? 'http://localhost:3001'
     : 'https://portfolio-backend-api.onrender.com') 
   : '';
-
 window.PORTFOLIO_CONFIG = {
-  apiBaseUrl: apiBaseUrl
+  apiBaseUrl: "https://my-backend-portfolio-1.onrender.com"
 };
