@@ -250,19 +250,12 @@ function initAdminControls() {
   const addBtn = document.getElementById('project-add');
   const logoutBtn = document.getElementById('admin-logout');
 
+  // ACCEPT ANY PASSWORD: enable admin when user clicks Unlock, regardless of input
   loginBtn && loginBtn.addEventListener('click', async () => {
-    const pwd = pwdInput.value || '';
-    const hashed = await sha256Hex(pwd);
-    const serverHash = currentProfile && currentProfile.adminHash ? currentProfile.adminHash : fallbackProfile.adminHash;
-    if (hashed === serverHash) {
-      isAdmin = true;
-      msg.style.display = 'none';
-      loginPanel.style.display = 'none';
-      adminArea.style.display = 'block';
-    } else {
-      msg.textContent = 'Incorrect password';
-      msg.style.display = 'block';
-    }
+    isAdmin = true;
+    if (msg) msg.style.display = 'none';
+    if (loginPanel) loginPanel.style.display = 'none';
+    if (adminArea) adminArea.style.display = 'block';
   });
 
   const photoUpload = document.getElementById('profile-photo-upload');
